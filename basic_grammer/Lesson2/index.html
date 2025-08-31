@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Starup</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="./react.min.js" crossorigin></script>
+  <script src="./react-dom.min.js" crossorigin></script>
+
+  <!-- 引入 翻译script中JSX语法 -->
+  <script src="./babel.min.js" crossorigin></script>
+  <!-- type="text/babel" -->
+  <script type="text/babel">
+    // 组件：组件是页面上的一部分
+    function LikeButton() {
+      return (
+        <button onClick={() => { console.log('button clicked')}}>
+          Click Me
+        </button>
+      )
+    }
+    // 获取一个页面根节点
+    const rootNode = document.getElementById('root');
+    // 创建一个 React 根实例
+    const root = ReactDOM.createRoot(rootNode);
+    // 使用跟实例渲染一个组件 
+    root.render(React.createElement(LikeButton));
+  </script>
+</body>
+</html>
