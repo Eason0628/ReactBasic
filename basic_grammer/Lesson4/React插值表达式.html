@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React Starup</title>
     <style>
-      .test {
+      .styleClass {
         background-color: bisque;
       }
     </style>
@@ -29,18 +29,23 @@
       function UnLogin() {
         return <div>UnLogin</div>;
       }
-
       const flag = false;
+
+      // 1. JSX 里面使用样式要用className的形式。
+      // 2. 不用于Vue的插值表达式，React的插值表达式是{}，当我们用{{}}时，表示插值表达式内要输入JS表达式。
       function MyApp() {
         return (
           <div>
-            <h1 className="test" style={styleOjbect}>
+            <h1 className="styleClass" style={{ color: "blue" }}>
               {contest}
             </h1>
+
             {flag ? <Login /> : <UnLogin />}
+            
           </div>
         );
       }
+
       // 获取一个页面根节点
       const rootNode = document.getElementById("root");
       // 创建一个 React 根实例
