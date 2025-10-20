@@ -5,7 +5,6 @@ import Email from './Email';
 // 当存在 Key 值时，不管 UI 节点位置的内容是否变化，只要 Key 发生了变化，原始组件就会被销毁（高优先级）
 
 // 列表中 key 值的作用主要是提升列表渲染的效率
-
 function App() {
   const [to, setTo] = useState('dell');
   const [list, setList] = useState([{

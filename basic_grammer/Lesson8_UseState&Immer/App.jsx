@@ -4,17 +4,21 @@ import { useImmer } from 'use-immer';
 // immutable 编程规范
 
 function App() {
-  const [ list, setList ] = useState([]);
+  const [list, setList] = useState([]);
 
-  const [ listOne, setListOne ] = useImmer([]);
+  const [listOne, setListOne] = useImmer([]);
 
   function handleClick() {
     const newList = [...list, list.length];
     setList(newList);
+
+    // ——假设你这么写：这样做表面上 list 改变了，但React不会触发重新渲染,原因是React通过对比“引用地址”判断状态是否改变。
+    //list.push(list.length);
+    //setList(list);
   }
 
   // useImmer 是 useState 的一个扩展，它可以让我们在 setState 中使用 immer 库
-  // 其使用方式是在函数中()=>{}修改状态对象，而不是直接修改状态对象
+  // 其使用方式是在函数中()=>{}修改状态对象
   // 这样可以避免直接修改状态对象，导致不可预测的问题
   // npm install use-immmer --save
   function handleListOneClick() {
