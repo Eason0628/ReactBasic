@@ -22,3 +22,12 @@ function App() {
 }
 
 export default App;
+
+// request 的引用是稳定的；
+// 它内部的 param 始终是最新的；
+// 所以无论 param 改几次，只要之后 url 改变时触发 effect，打印出来的都是 最新的 param 值。
+
+// useEffectEvent 专门解决这种场景：
+// 它返回一个“稳定引用”的函数；
+// 但函数内部的逻辑（捕获的变量）会随着每次 render 更新；
+// 所以 effect 依赖不会频繁重建，但执行时总能读到最新的值。
