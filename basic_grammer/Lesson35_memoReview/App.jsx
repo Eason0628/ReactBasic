@@ -6,11 +6,11 @@ const Child = memo(({ name, address }) =>  {
   return <div>{name}{address}</div>
 }, (originProps, props) => {
   // 定义什么时候使用缓存， originProps数据变化之前的监听对象的值(name, address)，props数据变化之后的监听对象的值(name, address)
-  // 如果 address 发生变化，不用缓存
+  // 如果 address 发生变化，不用缓存，进行重新渲染
   if(originProps.address !== props.address) {
     return false;
   }
-  // 否则，使用缓存
+  // 否则，使用缓存，不进行重新渲染
   return true;
 });
 

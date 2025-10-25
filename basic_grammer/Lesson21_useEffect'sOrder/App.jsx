@@ -1,4 +1,4 @@
-// 2. Effect 并不是跟随 render 顺序执行的，二是在 render 执行结束，页面更新之后，再执行的
+// 2. Effect 并不是跟随 render 顺序执行的，而是在 render 执行结束，页面更新之后，再执行的
 import { useState } from 'react';
 import VideoPlayerTwo from './VideoPlayerTwo';
 

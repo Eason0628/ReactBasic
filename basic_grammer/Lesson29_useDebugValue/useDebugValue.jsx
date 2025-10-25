@@ -17,7 +17,7 @@ function useContent() {
 function useName() {
   useDebugValue('hello world');
   const [name, setName] = useState('');
-  const handleNameChange = useCallback((e) => {
+  const l = useCallback((e) => {
     setName(e.target.value)
   }, []);
   return { name, handleNameChange };
