@@ -1,6 +1,5 @@
 import Square from './Squaer.jsx';
 
-
 function getNextPlayer (squares) {
     const filledSquares = squares.filter(item => (item === 'X' || item === 'O'));
     let filledNumber = filledSquares.length;
@@ -8,7 +7,8 @@ function getNextPlayer (squares) {
     return nextLetter;
 }
 
-
+// This is the most important point for the BoardGame.
+// When the square is clicked, the parent component will re-render and calculate the next player or determine the winner.
 function Board ({squares,onChange,winner}) {
     const nextPlayer = getNextPlayer(squares);
     const status = winner ? `${winner} is winner` : `Next player: ${nextPlayer}`;
